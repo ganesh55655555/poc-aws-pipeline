@@ -1,2 +1,2 @@
 #!/bin/bash
-systemctl stop httpd || true
+systemctl stop apache2
