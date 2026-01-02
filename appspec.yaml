@@ -7,7 +7,7 @@ files:
 
 hooks:
   ApplicationStop:
-    - location: scripts/stop_server.sh
+    - location: scripts/stop.sh
       timeout: 30
       runas: root
 
