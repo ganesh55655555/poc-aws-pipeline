@@ -7,5 +7,3 @@ chmod -R 755 /var/www/html
 
 echo "Starting Apache..."
 systemctl start apache2
-
-systemctl status apache2 --no-pager
