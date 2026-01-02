@@ -3,7 +3,7 @@ os: linux
 files:
   - source: /
     destination: /var/www/html
-    overwrite: true    # ← THIS FIXES THE ERROR
+    file_exists_behavior: OVERWRITE   # ← THIS IS THE OFFICIAL FIX
 hooks:
   BeforeInstall:
     - location: scripts/stop.sh
