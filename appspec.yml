@@ -3,10 +3,13 @@ os: linux
 files:
   - source: /
     destination: /var/www/html
-    file_exists_behavior: OVERWRITE   # ← THIS IS THE OFFICIAL FIX
+    file_exists_behavior: OVERWRITE  # Safety net
 hooks:
   BeforeInstall:
     - location: scripts/stop.sh
+      timeout: 300
+      runas: root
+    - location: scripts/cleanup.sh      # ← ADDED: Clears /var/www/html before copying new files
       timeout: 300
       runas: root
   AfterInstall:
