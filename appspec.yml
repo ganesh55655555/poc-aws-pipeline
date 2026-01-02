@@ -6,11 +6,7 @@ files:
     file_exists_behavior: OVERWRITE
 
 hooks:
-  BeforeInstall:
-    - location: scripts/stop.sh
-      timeout: 60
-      runas: root
   AfterInstall:
-    - location: scripts/reload.sh   # Use reload for zero downtime
+    - location: scripts/reload.sh
       timeout: 60
       runas: root
